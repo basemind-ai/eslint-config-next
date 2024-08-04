@@ -128,6 +128,17 @@ export default [
     processor: "markdown/markdown",
   },
   {
+    files: [
+      "**/*.md/*.{ts,js,mts,mjs,cjs,cts,}",
+      "**/*.md/*.js",
+      "**/*.md/*.tsx",
+      "**/*.md/*.jsx",
+      "**/*.md/*.mtsx",
+      "**/*.md/*.mjsx",
+    ],
+    processor: "markdown/markdown",
+  },
+  {
     ...eslintPluginJSDoc.configs["flat/recommended-typescript"],
     ignores: ["**/*.tsx"],
     rules: {
