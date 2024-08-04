@@ -1,0 +1,63 @@
+{
+  "name": "@basemind/eslint-config-next",
+  "version": "0.1.0",
+  "description": "Comprehensive ESLint config for NextJS projects",
+  "main": "dist/index.js",
+  "type": "module",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
+  "types": "dist/index.d.ts",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basemind-ai/eslint-config-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/basemind-ai/eslint-config-next/issues"
+  },
+  "homepage": "https://github.com/basemind-ai/eslint-config-next#readme",
+  "keywords": [
+    "eslint",
+    "typescript",
+    "linter",
+    "code-quality",
+    "react"
+  ],
+  "author": "Na'aman Hirschfeld",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "lint": "eslint --fix 'index.ts'",
+    "prepublish": "pnpm run build"
+  },
+  "dependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.8.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsdoc": "^48.11.0",
+    "eslint-plugin-markdown": "^5.1.0",
+    "eslint-plugin-n": "17.10.1",
+    "eslint-plugin-promise": "7.0.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-unicorn": "55.0.0",
+    "eslint-plugin-unused-imports": "^4.0.1",
+    "eslint-plugin-vitest": "^0.5.4",
+    "globals": "^15.9.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/eslint__eslintrc": "^2.1.2",
+    "eslint": "^9.8.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "typescript": ">=5"
+  }
+}
