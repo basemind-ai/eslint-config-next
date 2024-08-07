@@ -19,6 +19,7 @@ import eslintPluginVitest from "eslint-plugin-vitest";
 import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
 import globals from "globals";
 import eslintTS from "typescript-eslint";
+import { Linter } from "eslint";
 
 export default [
 	eslintJS.configs.recommended,
@@ -173,4 +174,4 @@ export default [
 	{
 		ignores: [".next", ".turbo", "__tmp__", "_next", "node_modules", "target"],
 	},
-];
+] as Linter.Config[];
