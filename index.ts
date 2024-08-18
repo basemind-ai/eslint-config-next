@@ -15,11 +15,11 @@ import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import eslintPluginVitest from "eslint-plugin-vitest";
-// @ts-expect-error, untyped import
 import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
 import globals from "globals";
 import eslintTS from "typescript-eslint";
-import { Linter } from "eslint";
+import { type Linter } from "eslint";
+import eslintConfigOxlint from "eslint-plugin-oxlint";
 
 export default [
 	eslintJS.configs.recommended,
@@ -160,7 +160,12 @@ export default [
 			"@typescript-eslint/no-floating-promises": "off",
 			"@typescript-eslint/no-implied-eval": "off",
 			"@typescript-eslint/no-magic-numbers": "off",
-			"@typescript-eslint/no-misused-promises": "off",
+			"@typescript-eslint/no-misused-promises": [
+				"error",
+				{
+					checksVoidReturn: false,
+				},
+			],
 			"@typescript-eslint/no-unsafe-assignment": "off",
 			"@typescript-eslint/no-unsafe-call": "off",
 			"@typescript-eslint/no-unsafe-member-access": "off",
@@ -172,6 +177,7 @@ export default [
 		},
 	},
 	{
-		ignores: [".next", ".turbo", "__tmp__", "_next", "node_modules", "target"],
+		ignores: [".next", ".turbo", "__tmp__", "_next", "node_modules", "target", "gen", "coverage", ".coverage"],
 	},
+	eslintConfigOxlint.configs["flat/recommended"],
 ] as Linter.Config[];

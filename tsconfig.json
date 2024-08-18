@@ -1,5 +1,5 @@
 {
-	"include": ["*.ts"],
+	"include": ["*.ts", "eslint.config.js"],
 	"compilerOptions": {
 		"alwaysStrict": true,
 		"baseUrl": ".",
